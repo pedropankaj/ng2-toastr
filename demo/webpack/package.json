@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "lite-server",
+    "start": "node init && lite-server",
     "tsc": "tsc",
-    "build": "webpack --progress --profile --bail"
+    "build": "node init && webpack --progress --profile --bail"
   },
   "author": "",
   "license": "ISC",

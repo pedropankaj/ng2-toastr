@@ -7,13 +7,13 @@
   "scripts": {
     "typings": "typings install",
     "webpack": "webpack --progress --profile --bail",
-    "build:prod": "NODE_ENV=production webpack -p --progress --color --optimize-minimize --optimize-dedupe --optimize-occurence-order",
-    "build:dev": "webpack-dev-server --hot --inline --colors --display-error-details --display-cached",
+    "build:prod": "node init && NODE_ENV=production webpack -p --progress --color --optimize-minimize --optimize-dedupe --optimize-occurence-order",
+    "build:dev": "node init && webpack-dev-server --hot --inline --colors --display-error-details --display-cached",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "ngc": "ngc",
     "lite": "lite-server",
-    "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "start": "node init && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "prepublish": "gulp clean && ngc && node make.js && gulp bundle-css"
   },
   "repository": {
@@ -69,6 +69,5 @@
     "typescript": "~2.3.3",
     "zone.js": "^0.8.4"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
